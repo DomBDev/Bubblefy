@@ -1,0 +1,25 @@
+.page-not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+}
+
+.page-not-found img {
+    display: block;
+    width: 15rem;
+    filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
+}
+
+.page-not-found h1 {
+    font-size: 100px;
+    text-align: center;
+    margin: 0;
+}
+
+.page-not-found p {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 0;
+}

@@ -1,0 +1,171 @@
+#control-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: none;
+     gap: 2rem;
+}
+
+#control-menu.active {
+    display: flex;
+}
+
+#add-button, #remove-button {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 2px solid black;
+    transition: background-color 0.5s ease;
+}
+
+#add-button {
+    background-color: var(--primary-color);
+}
+
+#remove-button {
+    background-color: var(--error-color);
+}
+
+#add-button:hover, #remove-button:hover {
+    cursor: pointer;
+    background-color: var(--accent-color);
+}
+
+#add-button i, #remove-button i {
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+body {
+    overflow-y: hidden;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-height: 75vh;
+}
+
+#circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    animation: rotate 300s linear infinite;
+  }
+
+  .center-circle {
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    animation: rotate 300s linear infinite;
+    outline: black 5px solid;
+    align-self: center;
+    justify-self: center;
+    animation: reverse-rotate 300s linear infinite;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .circle {
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--accent-color), rgb(32, 32, 32));
+    position: absolute;
+    transition: all 0.5s ease;
+    animation: reverse-rotate 300s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.circle.focused {
+    outline: 4px solid black;
+    background: radial-gradient(circle at 30% 30%, var(--error-light-color), rgb(32, 32, 32));
+}
+
+.circle-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+    position: absolute;
+    z-index: 1;
+    font-family: "Modak", system-ui;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+#pointer {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background: radial-gradient(circle at 30% 30%, var(--accent-color), rgb(0, 25, 36));
+    display: none;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px rgba(0, 25, 36, 0.5));
+}
+
+#pointer:hover {
+    cursor: pointer;
+}
+
+#pointer.released {
+    display: block;
+    animation: floatUp 1s ease-out;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000%);
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes reverse-rotate {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

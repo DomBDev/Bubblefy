@@ -3,8 +3,13 @@
 {% block title %}404{% endblock %}
 
 {% block content %}
-    <h1>404</h1>
-    <p>Page not found</p>
+    <div class="page-not-found">
+        <a href="{{ url_for('home.home') }}" class="navbar-logo">
+            <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Logo">
+        </a>
+        <h1>404</h1>
+        <p>Page not found</p>
+    </div>
 {% endblock %}
 
 {% block styles %}

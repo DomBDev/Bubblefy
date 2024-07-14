@@ -3,9 +3,32 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<div id="control-menu">
+    <button id="remove-button">
+        <i class="fas fa-minus"></i>
+    </button>
+    <button id="add-button">
+        <i class="fas fa-plus"></i>
+    </button>
+</div>
+<div class="home">
+    <div id="circle-container">
+        <div class="center-circle">
+            <div id="center-text">
+                <h1 id="menu-btn">WELCOME</h1>
+                <p>TO OUR WEBSITE</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="pointer">
+</div>
 {% endblock %}
 
 {% block styles %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 {% endblock %}
 
